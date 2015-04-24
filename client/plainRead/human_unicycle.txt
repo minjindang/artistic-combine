@@ -1,0 +1,30 @@
+#include<iostream>
+#include<stdlib.h>
+
+using namespace std;
+
+int main(){
+	cout << endl;
+	cout << "                     *****                     \n";
+	cout << "                    *******                    \n";
+	cout << "                     *****                     \n";
+	cout << "                       *                       \n";
+	cout << "                    *  *  *                    \n";
+	cout << "                  *    *    *   *              \n";
+	cout << "                *      *      *                 \n";
+	cout << "                  *    *                        \n";
+	cout << "                       *  0                     \n";
+	cout << "                     00000                 \n";
+	cout << "                    *  0   *                   \n";
+	cout << "                    *  0     *                 \n";
+	cout << "                    *00000     *               \n";
+	cout << "                  00*  0   00*                  \n";
+	cout << "                00  *  0   * 00                   \n";
+	cout << "                00  *  0     00                    \n";
+	cout << "                00           00                     \n";
+	cout << "                  00       00                     \n";
+	cout << "                     00000                        \n";
+	cout << "                                          \n";
+	system("PAUSE");
+	return 0;	
+}

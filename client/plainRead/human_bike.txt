@@ -1,0 +1,23 @@
+#include<iostream>
+#include<stdlib.h>
+
+using namespace std;
+
+int main(){
+	cout << endl;
+	cout << "                                 ***           \n";
+	cout << "                                *****          \n";
+	cout << "                             **  ***           \n";
+	cout << "                           *****               \n";
+	cout << "                         ****   *              \n";
+	cout << "                        ****      ****         \n";
+	cout << "                       ***                     \n";
+	cout << "              *******   ****       *******     \n";
+	cout << "            ***     ***    **    ***     ***   \n";
+	cout << "           **         **    **  **         **  \n";
+	cout << "           **         **     ** **         **  \n";
+	cout << "            ***     ***      **  ***     ***   \n";
+	cout << "              *******              *******     \n\n\n";
+	system("PAUSE");
+	return 0;	
+}

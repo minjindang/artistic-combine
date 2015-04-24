@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Artistic-Combine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <style type="text/css">
+        #Box2{
+            width:550px;
+            height:200px;
+            padding:10px;
+            border:dashed 2px blue;
+            float:left;
+            margin-right:10px;
+        }
+        #Box3{
+            width:250px;
+            height:200px;
+            padding:10px;
+            border:dashed 2px blue;
+            float:left;
+            margin-right:10px;
+        }
+    </style>
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+    
+    <!-- HTML5托拉功能開始 -->
+    <script type="text/javascript">
+        function AllowDrop(event){
+            event.preventDefault();
+        }
+        function Drag(event){
+            event.dataTransfer.setData("text",event.currentTarget.id);
+        }
+        function Drop(event){
+            event.preventDefault();
+            var data=event.dataTransfer.getData("text");
+            var file=document.getElementById("Box3").files;
+            var pngName = document.getElementById(data).src;
+            var partArray = [];
+            partArray = pngName.split("/");
+            var partArray2 = [];
+            partArray2 = partArray[5].split(".");
+            
+            console.log(partArray2);
+            event.currentTarget.appendChild(document.getElementById(data));
+			$.get('plainRead/'+partArray2[0]+'.txt', function(data){
+				console.log(data);
+				$('#gettxt').val(data);
+			});
+        }
+        function Drop_no_read(event){
+            event.preventDefault();
+            var data=event.dataTransfer.getData("text");
+            var file=document.getElementById("Box3").files;
+            event.currentTarget.appendChild(document.getElementById(data));
+            //$('#gettxt').val('');
+
+        }
+    </script>
+    <!-- HTML5托拉功能結束 -->
+    
+    <!-- 托拉範圍開始 -->
+    <div id='left'>
+        <div id="Box2" ondrop="Drop_no_read(event)" ondragover="AllowDrop(event)">
+            <img id="Img1" src="img/weel2.png" draggable="true" ondragstart="Drag(event)">
+            <img id="Img2" src="img/green-human.png" draggable="true" ondragstart="Drag(event)">
+            <img id="Img3" src="img/human_bike.png" draggable="true" ondragstart="Drag(event)">
+            <img id="Img4" src="img/car.png" draggable="true" ondragstart="Drag(event)">
+        </div>
+        <div id="Box3" ondrop="Drop(event)" ondragover="AllowDrop(event)"></div>
+        <div style="clear:both;"></div>
+        <div id=ahaha >
+            <textarea id="gettxt"></textarea>
+        </div>
+    </div>
+    <!-- 托拉範圍結束 -->
+    <!--
+    <div id='right'>
+
+        <div id="chat">
+            <ul id="usersList"></ul>
+            <div id="messages"></div>
+            <div>
+
+                我是:
+                <input type="text" id="nickname" size="2" value="阿哈哈" />
+                對所有人說: <input type="text" id="message" />
+                <input type="button" id="btnSay" value="送出" />
+            </div>
+            
+            <div id="connectbar">
+                <div id="connectInfo">
+                    <div>
+                        <input type="hidden" id="serverip" value="http://127.0.0.1:7000" />
+                    </div>
+                    <div>
+                        <input type="button" id="btnConnect" value="連線" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/connect.js"></script>
+    </div>
+    -->
+
+    
+  </body>
+</html>

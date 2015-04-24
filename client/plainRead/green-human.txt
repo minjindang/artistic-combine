@@ -1,0 +1,28 @@
+#include<iostream>
+#include<stdlib.h>
+
+using namespace std;
+
+int main(){
+	
+	cout << "               \n";
+	cout << "     *****     \n";
+	cout << "    *******    \n";
+	cout << "    *******    \n";
+	cout << "     *****     \n";
+	cout << "       *       \n";
+	cout << "    *******    \n";
+	cout << "  **   *   **  \n";
+	cout << " *     *     * \n";
+	cout << " *     *     * \n";
+	cout << "      ***      \n";
+	cout << "     *   *     \n";
+	cout << "    *     *    \n";
+	cout << "   *       *   \n";
+	cout << "  **       **  \n";
+
+	
+	
+	system("PAUSE");
+	return 0;	
+}
